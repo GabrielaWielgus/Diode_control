@@ -1,0 +1,50 @@
+A51 MACRO ASSEMBLER  PROJEKT2                                                             04/08/2021 14:10:08 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\Projekt2.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE Projekt2.a51 SET(SMALL) DEBUG PRINT(.\Listings\Projekt2.lst) OBJECT(.\O
+                      bjects\Projekt2.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     PROG SEGMENT CODE
+                       2     
+  00A0                 3     LED BIT P2.0
+  00B0                 4     SWITCH BIT P3.0
+                       5     
+----                   6     CSEG AT 0
+0000 020000   F        7     JMP start
+                       8     
+----                   9     RSEG PROG
+0000                  10         start:
+0000 20B002           11                     JB SWITCH, SKOK
+0003 80FB             12                     SJMP start
+0005                  13             SKOK:
+0005 E5B0             14             MOV A,P3
+0007 54FF             15             ANL A,#0FFh
+0009 F5A0             16             MOV P2,A
+                      17             
+000B 80F3             18         SJMP start
+                      19     END
+A51 MACRO ASSEMBLER  PROJEKT2                                                             04/08/2021 14:10:08 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+LED. . . . . . . .  B ADDR   00A0H.0 A   
+P2 . . . . . . . .  D ADDR   00A0H   A   
+P3 . . . . . . . .  D ADDR   00B0H   A   
+PROG . . . . . . .  C SEG    000DH       REL=UNIT
+SKOK . . . . . . .  C ADDR   0005H   R   SEG=PROG
+START. . . . . . .  C ADDR   0000H   R   SEG=PROG
+SWITCH . . . . . .  B ADDR   00B0H.0 A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)
