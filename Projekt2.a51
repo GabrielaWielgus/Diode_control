@@ -8,9 +8,6 @@ JMP start
 
 RSEG PROG
     start:
-		JB SWITCH, SKOK
-		SJMP start
-	SKOK:
         MOV A,P3
         ANL A,#0FFh
         MOV P2,A
